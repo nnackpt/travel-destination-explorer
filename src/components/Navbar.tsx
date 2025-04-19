@@ -3,7 +3,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { getRandomCountry } from "@/lib/api";
 
-export default function Navbar() {
+interface NavbarProps {
+    onCompareToggle?: () => void
+    showingComparison?: boolean 
+}
+
+export default function Navbar({ onCompareToggle, showingComparison = false }: NavbarProps) {
     const router = useRouter()
     const [loading, setLoading] = useState(false)
 
@@ -27,6 +32,18 @@ export default function Navbar() {
                         </Link>
                     </div>
                     <div className="flex items-center space-x-4">
+                        {onCompareToggle && (
+                            <button
+                                onClick={onCompareToggle}
+                                className={`px-4 py-2 rounded-md transition-colors ${
+                                    showingComparison
+                                        ? 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                                        : 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200'
+                                }`}
+                            >
+                                {showingComparison ? 'Exit Compare Mode' : 'Compare Countries'}
+                            </button>
+                        )}
                         <button
                             onClick={handleRandomCountry}
                             disabled={loading}

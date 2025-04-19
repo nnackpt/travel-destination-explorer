@@ -23,22 +23,35 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
         <div className="my-8">
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-2xl font-bold">Photos</h2>
-                <div className="flex space-x-4">
+                <div className="flex space-x-2">
                     <button
                         onClick={() => setViewType('grid')}
-                        className={`px-4 py-2 rounded-md ${
-                            viewType === 'grid' ? 'bg-indigo-600 text-white' : 'bg-gray-200'
+                        className={`p-2 rounded-md flex items-center justify-center ${
+                            viewType === 'grid' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'
                         }`}
+                        title="Grid View"
+                        aria-label="Grid View"
                     >
-                        Grid
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
                     </button>
                     <button
                         onClick={() => setViewType('carousel')}
-                        className={`px-4 py-2 rounded-md ${
-                            viewType === 'carousel' ? 'bg-indigo-600 text-white' : 'bg-gray-200'
+                        className={`p-2 rounded-md flex items-center justify-center ${
+                            viewType === 'carousel' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'
                         }`}
+                        title="Carousel View"
+                        aria-label="Carousel View"
                     >
-                        Carousel
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="2" y="7" width="20" height="10" rx="2" ry="2"></rect>
+                            <circle cx="12" cy="17" r="1"></circle>
+                            <path d="M5 7v-2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"></path>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -74,15 +87,19 @@ export default function ImageGallery({ images, loading }: ImageGalleryProps) {
                     </div>
                     <button
                         onClick={() => setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70"
                     >
-                        ←
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
                     </button>
                     <button
                         onClick={() => setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70"
                     >
-                        →
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
                     </button>
                 </div>
             )}

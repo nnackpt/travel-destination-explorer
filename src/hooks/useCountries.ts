@@ -56,6 +56,15 @@ export function useCountries() {
         }
     };
 
+    const filterByRegion = (region: string) => {
+        if (!region) {
+            setFilterdCountries(countries)
+        } else {
+            const filtered = countries.filter(country => country.region === region)
+            setFilterdCountries(filtered)
+        }
+    }
+
     return {
         countries,
         filteredCountries,
@@ -63,5 +72,6 @@ export function useCountries() {
         error,
         searchQuery,
         handleSearch,
+        filterByRegion
     };
 }
