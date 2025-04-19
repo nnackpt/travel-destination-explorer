@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Travel Destination Explorer
 
-## Getting Started
+Explore the world in style! Travel Destination Explorer is a fun and interactive web application that lets you discover countries, see beautiful images, and create your travel wishlist — all while practicing modern web development tools and API integration.
 
-First, run the development server:
+## 🔧 Tech Stack
+
+- **Next.js (TypeScript)** – Handles routing, SSR/SSG, and fast performance
+- **TailwindCSS** – For building a beautiful, responsive UI quickly
+- **RestCountries API** – Provides country data (name, flag, capital, etc.)
+- **Unsplash API** – Fetches high-quality country-related images
+
+---
+
+## ✅ Core Features
+
+### 🔍 Country Search
+
+- Search for any country by name
+- Display results in card or grid view
+
+**Country Card displays:**
+
+- 🇺🇳 Country name
+- 🏳️ Flag
+- 🏙 Capital city
+- 🗣 Official language(s)
+- 💱 Currency
+- 🌍 Region (continent)
+
+---
+
+### 🖼️ Country Details Page
+
+- Click on a country to view its detail page
+- Fetch photos from **Unsplash API** using country name as a keyword
+- Display images in **Grid** or **Carousel** format
+
+---
+
+### 🎲 Random Explore
+
+- “Explore Random Country” button
+- Fetches a random country using **RestCountries API**
+- Automatically navigates to that country’s details page
+
+---
+
+### 🎨 Dynamic Theme Color from Flag
+
+- Use `color-thief` or similar to extract dominant color from the flag image
+- Apply this color dynamically to background, headers, or card accents using **TailwindCSS** classes
+
+---
+
+### 🌍 Wishlist – Countries You Want to Visit
+
+- "Add to Wishlist" button on each country
+- Save wishlist using **localStorage** or **IndexedDB**
+- View and manage your saved countries in a separate **“My Wishlist”** page
+- Remove countries from wishlist anytime
+
+---
+
+## 🚀 How to Run the Project
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/nnackpt/travel-destination-explorer.git
+cd travel-destination-explorer
+
+# 2. Install dependencies
+npm install
+
+# 3. Set up environment variables
+cp .env.local
+# Add your Unsplash API Key
+
+# 4. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
