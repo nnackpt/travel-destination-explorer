@@ -72,8 +72,8 @@ cd travel-destination-explorer
 npm install
 
 # 3. Set up environment variables
-cp .env.local
-# Add your Unsplash API Key
+NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=your_unsplash_access_key_here
+UNSPLASH_SECRET_KEY=your_unsplash_secret_key_here
 
 # 4. Run the development server
 npm run dev
