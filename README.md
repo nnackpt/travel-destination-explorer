@@ -78,3 +78,7 @@ UNSPLASH_SECRET_KEY=your_unsplash_secret_key_here
 # 4. Run the development server
 npm run dev
 ```
+
+## License
+
+This project is licensed under [nnackpt](https://github.com/nnackpt) License.
